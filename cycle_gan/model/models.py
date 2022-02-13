@@ -97,6 +97,7 @@ class CycleGan(nn.Module):
         # discriminators training step
         self._discriminators_step()
 
+    @torch.no_grad()    
     def test_step(self, input_data):
         self.forward(input_data)
         dct = {
